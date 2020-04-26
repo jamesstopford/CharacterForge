@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CharacterForge
 {
@@ -8,11 +10,31 @@ namespace CharacterForge
         {
             Console.WriteLine("Hello World!");
 
+            var actors = new List<Actor>();
 
 
             var person = new Actor();
 
-            Console.WriteLine("Person's name is {0} and their GUID is {1}", person.GetName(), person.GetGuid().ToString());
+            int targetPartySize = 10;
+            
+            while (actors.Count < targetPartySize )
+            {
+                var partyGoer = new Actor();
+                partyGoer.Randomize();
+                actors.Add(partyGoer);
+
+            }
+            
+
+
+
+            foreach (Actor actor in actors)
+            {
+                Console.WriteLine("Welcome to the party {0}. \nYour robot name is {1}", actor.GetName(), actor.GetGuid()) ;
+                Console.WriteLine("******************************");
+            }
+
+            
 
         }
     }

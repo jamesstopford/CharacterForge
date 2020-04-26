@@ -20,7 +20,7 @@ namespace CharacterForge
      
         public string GetName()
         {
-            return _name.Casual;
+            return _name.GetCasual();
         }
 
         public void SetName(Name name)
@@ -33,6 +33,10 @@ namespace CharacterForge
             return _guid;
         }
 
+        public void Randomize()
+        {
+            _name.Randomize();
+        }
         
        
     }
