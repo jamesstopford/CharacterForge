@@ -8,9 +8,11 @@ namespace CharacterForge
         {
             Console.WriteLine("Hello World!");
 
+
+
             var person = new Actor();
 
-            Console.WriteLine("Person's name is {0}", person.GetName());
+            Console.WriteLine("Person's name is {0} and their GUID is {1}", person.GetName(), person.GetGuid().ToString());
 
         }
     }

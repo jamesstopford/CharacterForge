@@ -1,24 +1,34 @@
-﻿namespace CharacterForge
+﻿using System;
+using System.Collections.Generic;
+
+namespace CharacterForge
 {
     public class Actor
     {
         private int _age;
-        private   string _name {  get;  set; }
+        readonly private Guid _guid;
+        private Name _name;
 
         public Actor()
         {
-            GenerateName("test");
+            _guid = Guid.NewGuid();
+            _name = new Name();
         }
-
+     
         public string GetName()
         {
-            return _name;
+            return _name.GetName();
         }
 
-        private void GenerateName(object actorNamingConvention)
+        public Guid GetGuid()
         {
-            this._name = "Joe";
+            return _guid;
         }
-
+       
     }
+
+
+
+
+
 }
